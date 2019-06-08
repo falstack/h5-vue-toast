@@ -19,13 +19,13 @@ export default {
   },
   methods: {
     showToast(type) {
-      this.$toast[type](Date.now())
+      this.$toast[type](type)
         .then(() => {
           console.log(type)
         })
     },
     showLoading() {
-      this.$toast.loading(Date.now())
+      this.$toast.loading('loading')
     },
     stop() {
       this.$toast.stop()

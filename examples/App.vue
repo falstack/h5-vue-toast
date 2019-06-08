@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Toast Component" />
+    <HelloWorld msg="h5-vue-toast" />
   </div>
 </template>
 
