@@ -1,8 +1,10 @@
 <template>
   <transition name="v-toast-pop">
-    <div v-show="visible" class="v-toast" :class="`v-toast-${type}`">
-      <i class="v-toast-font"></i>
-      <span class="v-toast-text" v-text="message" />
+    <div v-show="visible" class="v-toast-wrap">
+      <div class="v-toast" :class="`v-toast-${type}`">
+        <i class="v-toast-font"></i>
+        <span class="v-toast-text" v-text="message" />
+      </div>
     </div>
   </transition>
 </template>
@@ -59,7 +61,7 @@ export default {
 }
 
 .v-toast {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -69,8 +71,16 @@ export default {
   color: #fff;
   box-sizing: border-box;
   text-align: center;
-  z-index: 1000;
   transition: opacity 0.3s linear;
+
+  &-wrap {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+  }
 
   &-font {
     font-family: 'v-toast-font' !important;
