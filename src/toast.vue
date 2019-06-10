@@ -1,6 +1,6 @@
 <template>
   <transition name="v-toast-pop">
-    <div v-show="visible" class="v-toast-wrap">
+    <div v-if="visible" class="v-toast-wrap">
       <div class="v-toast" :class="`v-toast-${type}`">
         <i class="v-toast-font"></i>
         <span class="v-toast-text" v-text="message" />
@@ -71,7 +71,6 @@ export default {
   color: #fff;
   box-sizing: border-box;
   text-align: center;
-  transition: opacity 0.3s linear;
 
   &-wrap {
     position: fixed;
@@ -93,8 +92,8 @@ export default {
   }
 
   &-info {
-    width: 240px;
-    padding: 9px 22px;
+    max-width: 240px;
+    padding: 10px;
   }
 
   &-success {
@@ -198,8 +197,8 @@ export default {
   &-success,
   &-error,
   &-loading {
-    padding: 20px;
-    width: 132px;
+    padding: 15px;
+    width: 122px;
 
     .v-toast-text {
       padding-top: 10px;
@@ -207,11 +206,16 @@ export default {
   }
 
   &-text {
-    font-size: 14px;
+    font-size: 12px;
     display: block;
     text-align: center;
     word-break: break-word !important;
     word-break: break-all;
+  }
+
+  &-pop-enter-active,
+  &-pop-leave-active {
+    transition: opacity 0.25s;
   }
 
   &-pop-enter,
