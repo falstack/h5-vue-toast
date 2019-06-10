@@ -1,6 +1,6 @@
 {
   "name": "h5-vue-toast",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/h5-toast.umd.min.js",
   "files": [
     "dist"

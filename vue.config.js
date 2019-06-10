@@ -20,6 +20,6 @@ module.exports = {
     plugins: [new webpack.BannerPlugin(banner)]
   },
   css: {
-    extract: true
+    extract: false
   }
 }
