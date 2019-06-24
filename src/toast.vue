@@ -1,6 +1,10 @@
 <template>
   <transition name="v-toast-pop">
-    <div v-if="visible" class="v-toast-wrap">
+    <div
+      v-if="visible"
+      class="v-toast-wrap"
+      :class="{ 'v-toast-mask': type !== 'loading' }"
+    >
       <div class="v-toast" :class="`v-toast-${type}`">
         <i class="v-toast-font"></i>
         <span class="v-toast-text" v-text="message" />
@@ -79,6 +83,10 @@ export default {
     left: 0;
     top: 0;
     z-index: 1000;
+  }
+
+  &-mask {
+    pointer-events: none;
   }
 
   &-font {
