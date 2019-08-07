@@ -1,27 +1,58 @@
 <template>
   <div id="app">
-    <HelloWorld msg="h5-vue-toast" />
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <button @click="showToast('info')">info</button>
+    <button @click="showToast('error')">error</button>
+    <button @click="showToast('success')">success</button>
+    <button @click="showLoading">loading</button>
+    <button @click="stop">stop</button>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
+    <p>123</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "app",
-  components: {
-    HelloWorld
+  name: 'App',
+  methods: {
+    showToast(type) {
+      this.$toast[type](type).then(() => {
+        console.log(type)
+      })
+    },
+    showLoading() {
+      this.$toast.loading('loading')
+    },
+    stop() {
+      this.$toast.stop()
+    }
   }
-};
-</script>
-
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
-</style>
+</script>

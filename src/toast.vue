@@ -14,11 +14,8 @@
 </template>
 
 <script>
-function preventDefault(e) {
-  e.preventDefault()
-}
-
 export default {
+  name: 'VToast',
   data() {
     return {
       id: '',
@@ -42,16 +39,12 @@ export default {
           this.hide(id)
         }, options.duration)
       }
-
-      document.body.addEventListener('touchmove', preventDefault)
     },
     hide(id) {
       if (id && id !== this.id) {
         return
       }
       this.visible = false
-
-      document.body.removeEventListener('touchmove', preventDefault)
     }
   }
 }
